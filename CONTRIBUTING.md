@@ -7,7 +7,9 @@ Thank you for your interest in contributing!
 1. Fork the repository and clone locally.
 2. Create a virtual environment: `python -m venv .venv && source .venv/bin/activate`
 3. Install in editable mode with test deps: `pip install -e ".[dev]"`
-4. Run tests: `python -m pytest tests/ -v`
+4. Run tests: `PYTHONPATH=src python -m pytest tests/ -v`
+
+> **Note:** `PYTHONPATH=src` is required for libraries using a `src/` layout.
 
 ## Guidelines
 
@@ -20,7 +22,9 @@ Thank you for your interest in contributing!
 
 1. Create a branch: `git checkout -b feature/my-feature`
 2. Write tests first (TDD preferred).
-3. Ensure all tests pass: `python -m pytest tests/ -v`
+3. Ensure all tests pass: `PYTHONPATH=src python -m pytest tests/ -v`
+
+> **Note:** `PYTHONPATH=src` is required for libraries using a `src/` layout.
 4. Update `CHANGELOG.md` under `[Unreleased]`.
 5. Open a PR with a clear description of what and why.
 
